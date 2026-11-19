@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+/* dark: ab sirf tab chalega jab <html class="dark"> ho — OS/browser dark mode se nahi */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #FAF7F5;
+  --surface: #EFEAE5;
+  --border: #E5DFDA;
+  --foreground: #2C2420;
+  /* Browser/OS (aur Chrome/Samsung force-dark) ko batata hai: sirf light theme */
+  color-scheme: only light;
+}
+
+html {
+  background-color: var(--background);
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  min-height: 100vh;
+  min-height: 100dvh;
+  /* clip (hidden nahi) taake sticky navbar kaam karta rahe */
+  overflow-x: clip;
+}
+
+img, video, svg {
+  max-width: 100%;
+}
